@@ -11,6 +11,37 @@ services:
       - ./wppconnect_tokens:/usr/src/wpp-server/tokens
     ports:
       - "21465:21465"
+    environment:
+      # Server Configuration
+      - SECRET_KEY=your-secret-key-here
+      - HOST=http://localhost
+      - PORT=21465
+      - DEVICE_NAME=WppConnect-Docker
+      
+      # Webhook Configuration
+      - WEBHOOK_URL=http://your-webhook-url.com
+      - WEBHOOK_AUTO_DOWNLOAD=true
+      - WEBHOOK_READ_MESSAGE=true
+      - WEBHOOK_LISTEN_ACKS=true
+      
+      # MongoDB Configuration (if needed)
+      - MONGODB_DATABASE=tokens
+      - MONGODB_HOST=mongodb
+      - MONGODB_PORT=27017
+      - MONGODB_USER=admin
+      - MONGODB_PASSWORD=password123
+      - MONGODB_IS_REMOTE=false
+      
+      # Redis Configuration (if needed)
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=redis123
+      
+      # AWS S3 Configuration (if needed)
+      - AWS_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=your-access-key
+      - AWS_SECRET_KEY=your-secret-key
+      - AWS_BUCKET_NAME=your-bucket-name
 
 volumes:
   wppconnect_tokens: {}      
