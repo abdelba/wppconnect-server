@@ -45,8 +45,8 @@ export default {
   },
   createOptions: {
     puppeteerOptions: {
-      timeout: 60000,
-      protocolTimeout: 60000,
+      timeout: 0,
+      protocolTimeout: 0,
     },
     browserArgs: [
       '--disable-dev-shm-usage',
