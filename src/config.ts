@@ -1,7 +1,5 @@
 import { ServerOptions } from './types/ServerOptions';
 
-console.log('loading config');
-
 export default {
   secretKey: process.env.SECRET_KEY,
   host: process.env.HOST || 'http://localhost',
@@ -46,6 +44,10 @@ export default {
     logger: (process.env.LOG_LOGGER || 'console,file').split(','),
   },
   createOptions: {
+    puppeteerOptions: {
+      timeout: 60000,
+      protocolTimeout: 60000,
+    },
     browserArgs: [
       '--disable-web-security',
       '--no-sandbox',
