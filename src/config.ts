@@ -52,6 +52,7 @@ export default {
       '--disable-dev-shm-usage',
       '--disable-web-security',
       '--no-sandbox',
+      '--disable-setuid-sandbox',
       '--disable-web-security',
       '--aggressive-cache-discard',
       '--disable-cache',
