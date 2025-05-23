@@ -49,6 +49,7 @@ export default {
       protocolTimeout: 60000,
     },
     browserArgs: [
+      '--disable-dev-shm-usage',
       '--disable-web-security',
       '--no-sandbox',
       '--disable-web-security',
